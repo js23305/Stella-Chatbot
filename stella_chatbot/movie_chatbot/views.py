@@ -12,4 +12,4 @@ def movie_chatbot(request):
         'content': 'Welcome to the chatbot'
     }
 
-    return HttpResponse(template.render(context))
+    return HttpResponse(template.render())

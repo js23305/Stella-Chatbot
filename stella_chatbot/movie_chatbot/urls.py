@@ -1,7 +1,6 @@
 from django.urls import path
-from movie_chatbot.views import movie_chatbot
-
+from . import views
 urlpatterns = [
-    path('', movie_chatbot, name='movie_chatbot'),
-    
+    path('movie_Chatbot/', views.movie_chatbot, name='movie_chatbot'),
+
 ]
