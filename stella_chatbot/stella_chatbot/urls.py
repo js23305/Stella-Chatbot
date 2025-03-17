@@ -18,6 +18,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('movie_chatbot.urls')),
+    path('movie_chatbot/', include('movie_chatbot.urls')),
     path('admin/', admin.site.urls),
 ]

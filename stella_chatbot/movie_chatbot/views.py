@@ -2,9 +2,8 @@ from django.template import loader
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 
-# Create your views here.
+def chatbotui(request):
 
-def movie_chatbot(request):
     template = loader.get_template('chat.html')
 
     context = {
@@ -12,34 +11,36 @@ def movie_chatbot(request):
         'content': 'Welcome to the chatbot'
     }
 
-    return HttpResponse(template.render(context))
+    return HttpResponse(template.render(context, request))
+    
 
 def send_film_to_user(data):
 
     print(data.POST)
 
     message = "I'm not sure"
-
+    
     match data.POST['genre']:
-       case "Horror":
+        case "Horror":
             message = "I recommend you watch The Conjuring"
 
-       case "Romance":
+        case "Romance":
             message = "I recommend you watch The Notebook"
 
-       case "Comedy":
+        case "Comedy":
             message = "I recommend you watch Superbad"
 
-       case "War":
+        case "War":
             message = "I recommend you watch Saving Private Ryan"
 
-       case "Western":
+        case "Western":
             message = "I recommend you watch The Good, the Bad and the Ugly"
-       case _:
+        case _:
             print("The language doesn't matter, what matters is solving problems.")
 
     return JsonResponse({
-         "message": message,
-         "status_Code": 200
+        "message": message,
+        "status_code": 200
     })
+    
 
