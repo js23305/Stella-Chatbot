@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('movie_chatbot/', include('movie_chatbot.urls')),
+    path('login/', include('login.urls')),
     path('admin/', admin.site.urls),
 ]
