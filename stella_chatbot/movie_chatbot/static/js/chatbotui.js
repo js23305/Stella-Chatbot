@@ -26,7 +26,7 @@ function sendMessageToServer() {
                             <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
                             <div class="d-flex gap-2 w-100 justify-content-between">
                                 <div>
-                                    <h6 class="mb-0">Laguna</h6>
+                                    <h6 class="mb-0">Stella</h6>
                                     <p class="mb-0 opacity-75">` + response['message'] + `</p>
                                 </div>
                                 <small class="opacity-50 text-nowrap">now</small>
