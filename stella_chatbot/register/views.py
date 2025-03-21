@@ -15,15 +15,15 @@ def register(request):
 
     return HttpResponse(template.render(context, request))
 
-def sendRegistrartionIsSuccessful(data):
+def send_registration_is_successful(data):
     register_account_url = f'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD32J9GR-rh7rQTev9qAvSwo-mgTXnrolk'
 
     userEmail = data.POST.get('registerEmail')
     userPassword = data.POST.get('registerPassword')
     payload = {
-        "regsiterEmail": userEmail,
-        "regsiterPassowrd": userPassword,
-        "returnsecureToken": True
+        "email": userEmail,
+        "password": userPassword,
+        "returnSecureToken": True
     }
 
     headers = {
